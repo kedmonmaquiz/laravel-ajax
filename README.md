@@ -1,1 +1,1 @@
-<p align="center">Usage of Laravel and Ajax</p>
+<p align="center">Usage of Ajax Requests in Laravel</p>
