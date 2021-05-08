@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><strong>Ajax TODO List</strong> <span class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Add</span></div>
+                <div class="card-header">
+                    <strong>Ajax TODO List</strong> <span class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#exampleModal" id="addItem">Add</span>
+                </div>
 
                 <div class="card-body">
                   <ul class="list-group">
@@ -31,7 +33,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <input type="text" id="addItem" placeholder="Add Item Here" class="form-control">
+          @csrf
+          <input type="text" id="itemInput" placeholder="Add Item Here" class="form-control">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal" style="display: none" id="deleteButton">Delete</button>
@@ -49,7 +52,7 @@
             $('.ourItem').each(function(){
               $(this).click(function(event){
                   var text = $(this).text();
-                  $('#addItem').val(text);
+                  $('#itemInput').val(text);
                   $('#title').text('Edit Item');
                   $('#deleteButton').show();
                   $('#updateButton').show();
@@ -57,6 +60,23 @@
 
               })
             })
+
+
+              $('#addItem').click(function(event){
+                  $('#itemInput').val("");
+                  $('#title').text('Add New Item');
+                  $('#deleteButton').hide();
+                  $('#updateButton').hide();
+                  $('#addButton').show();
+              })
+
+              $('#addButton').click(function(event){
+                  var text = $('#itemInput').val();
+                  $.post('/mylists', {'text': 'text','_token':$('input[name=_token]').val()}, function(data) {
+                   console.log(data);
+                  });
+
+              })
         })
     </script>
 @endsection
