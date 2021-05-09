@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -77,11 +77,9 @@
         </main>
     </div>
 
-    <!-- Scripts -->
+    <!-- jQuery -->
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <!--bootstrap-->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    @yield('js')
-
 </body>
 </html>
