@@ -81,5 +81,7 @@
     <script src="{{ asset('js/jquery.js') }}"></script>
     <!--bootstrap-->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    @yield('js')
 </body>
 </html>

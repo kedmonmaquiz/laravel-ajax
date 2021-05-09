@@ -14,6 +14,3 @@ Route::post('/save-items', [App\Http\Controllers\ItemController::class,'store'])
 Route::post('/delete-item',[App\Http\Controllers\ItemController::class,'destroy']);
 
 Route::post('/update-item',[App\Http\Controllers\ItemController::class,'update']);
-
-
-

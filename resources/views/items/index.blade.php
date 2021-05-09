@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-3 mb-4">
+      <input type="text" class="form-control" id="itemSearch" placeholder="Search an item ....">
+    </div>
+  </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -98,6 +103,6 @@
                   $('#items').load(location.href + ' #items');
                 });
               });
-        })
+            });
     </script>
 @endsection
