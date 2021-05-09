@@ -15,6 +15,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!--jQuery UI-->
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
 </head>
 <body>
     <div id="app">
@@ -77,11 +79,14 @@
         </main>
     </div>
 
-    <!-- jQuery -->
+     <!-- jQuery -->
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <!--jUery UI-->
+    <script src="{{ asset('js/jquery-ui.js')}}"></script>
     <!--bootstrap-->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script> 
 
     @yield('js')
+
 </body>
 </html>

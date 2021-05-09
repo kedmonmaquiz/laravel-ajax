@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-3 mb-4">
-      <input type="text" class="form-control" id="itemSearch" placeholder="Search an item ....">
+      <input type="text" class="form-control" id="searchItem" placeholder="Search an item ....">
     </div>
   </div>
     <div class="row justify-content-center">
@@ -103,6 +103,11 @@
                   $('#items').load(location.href + ' #items');
                 });
               });
+
+              //search item
+                $( "#searchItem" ).autocomplete({
+                  source: {!! $itemNames !!}
+                });
             });
     </script>
 @endsection

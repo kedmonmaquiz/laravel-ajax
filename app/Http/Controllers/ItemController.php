@@ -10,7 +10,8 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::all();
-        return view('items.index',compact('items'));
+        $itemNames = Item::all()->pluck('name');
+        return view('items.index',compact(['items','itemNames']));
     }
 
     public function store(Request $request){
